@@ -1,4 +1,4 @@
-package model;
+package web.model;
 
 public class Car {
     private String model;
@@ -41,7 +41,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car " +
-                "model = " + model +
+                "web.model = " + model +
                 ", color = " + color +
                 ", year = " + year;
     }
