@@ -1,10 +1,13 @@
 package web.service;
 
 import web.model.User;
+import web.repository.UserRepository;
 
 public class test {
     public static void main(String[] args) {
-        UserService userService = new UserServiceImpl();
-        userService.addUser(new User("name", "surname"));
+        //UserService service = new UserServiceImpl();
+        //service.addUser(new User("test", "test"));
+        UserRepository repository = new UserRepository();
+        repository.save(new User("test", "test"));
     }
 }

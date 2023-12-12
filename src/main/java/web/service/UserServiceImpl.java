@@ -6,9 +6,13 @@ import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 import web.repository.UserRepository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 @Service
 
 public class UserServiceImpl implements UserService {
+
     private UserRepository repository;
 
     public UserServiceImpl() {
@@ -24,6 +28,7 @@ public class UserServiceImpl implements UserService {
     public void addUser(User user) {
         repository.save(user);
 
+
     }
     @Transactional
 
@@ -37,7 +42,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUser(User user) {
         repository.delete(user);
-
     }
 }
 
