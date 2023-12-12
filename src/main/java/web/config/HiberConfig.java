@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.persistence.EntityManagerFactory;
 
 
+import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 import java.util.Objects;
 import java.util.Properties;
@@ -34,7 +35,7 @@ public class HiberConfig {
         this.env = env;
     }
 
-    private Properties hibernateProperties() {
+    Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
         properties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
@@ -59,6 +60,7 @@ public class HiberConfig {
         vendorAdapter.setGenerateDdl(true);
         vendorAdapter.setShowSql(true);
         em.setJpaVendorAdapter(vendorAdapter);
+        em.setJpaProperties(hibernateProperties());
         return em;
     }
     @Bean
