@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
-import web.repository.UserRepository;
+import web.repository.UseRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,12 +13,12 @@ import javax.persistence.PersistenceContext;
 
 public class UserServiceImpl implements UserService {
 
-    private UserRepository repository;
+    private UseRepository repository;
 
     public UserServiceImpl() {
     }
     @Autowired
-    public UserServiceImpl(UserRepository repository) {
+    public UserServiceImpl(UseRepository repository) {
         super();
         this.repository = repository;
     }
@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(User user) {
-        repository.delete(user);
+
     }
 }
 
