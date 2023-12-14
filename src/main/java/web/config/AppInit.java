@@ -7,7 +7,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     // Метод, указывающий на класс конфигурации
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{ HibernateConfig.class};
+        return null;
     }
 
 
@@ -20,8 +20,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     }
 
 
-
-   @Override
+    @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }

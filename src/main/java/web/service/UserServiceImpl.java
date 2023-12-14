@@ -6,14 +6,14 @@ import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 import web.repository.UserRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Service
 
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
+
     @Autowired
 
     public UserServiceImpl(UserRepository userRepository) {
@@ -22,12 +22,14 @@ public class UserServiceImpl implements UserService {
 
     public UserServiceImpl() {
     }
+
     @Transactional
     @Override
     public void addUser(User user) {
         userRepository.addUser(user);
 
     }
+
     @Transactional
 
     @Override
@@ -35,12 +37,14 @@ public class UserServiceImpl implements UserService {
         userRepository.updateUser(user);
 
     }
+
     @Transactional
 
     @Override
-    public void deleteUser(User user) {
-        userRepository.deleteUser(user);
+    public void deleteUser(Long id) {
+        userRepository.deleteUser(id);
 
     }
+
 }
 

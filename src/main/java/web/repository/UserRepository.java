@@ -1,33 +1,11 @@
 package web.repository;
 
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+public interface UserRepository {
+    void addUser(User user);
 
-@Repository
+    void updateUser(User user);
 
-public class UserRepository {
-    @PersistenceContext
-    EntityManager entityManager;
-    @Transactional
-    public void addUser(User user) {
-        entityManager.persist(user);
-
-
-    }
-    @Transactional
-
-    public void updateUser(User user) {
-        entityManager.merge(user);
-
-    }
-    @Transactional
-
-    public void deleteUser(User user) {
-        entityManager.remove(user);
-
-    }
+    void deleteUser(Long id);
 }
