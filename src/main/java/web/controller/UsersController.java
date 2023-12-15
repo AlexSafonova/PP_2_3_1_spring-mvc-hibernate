@@ -14,9 +14,14 @@ import java.util.List;
 @Controller
 
 public class UsersController {
+    UserService userService;
     @Autowired
-    UserService userService = new UserServiceImpl();
-    @GetMapping(value = "/users")
+
+    public UsersController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @GetMapping(value = "/")
     public String getUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
         return "users";
