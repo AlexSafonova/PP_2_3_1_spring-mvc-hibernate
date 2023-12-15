@@ -45,6 +45,12 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteUser(id);
 
     }
+    @Transactional(readOnly = true)
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.getAllUsers();
+    }
 
 }
 
