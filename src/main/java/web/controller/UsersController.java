@@ -8,14 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.model.User;
 import web.service.UserService;
-import web.service.UserServiceImpl;
 
-import java.util.List;
 
 @Controller
 
 public class UsersController {
-    UserService userService;
+    private final UserService userService;
     @Autowired
 
     public UsersController(UserService userService) {

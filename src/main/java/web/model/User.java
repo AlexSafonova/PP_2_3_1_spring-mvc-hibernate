@@ -4,12 +4,13 @@ import javax.persistence.*;
 
 
 @Entity(name = "users")
-@Table(name = "users")
 
-public class User implements java.io.Serializable {
+
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
     @Column
     private String name;

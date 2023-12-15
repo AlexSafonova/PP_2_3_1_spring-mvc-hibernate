@@ -1,29 +1,29 @@
 body {
     font-family: Arial, sans-serif;
-    padding: 20px;
+    padding: 10px;
     background: linear-gradient(to right, rgb(241, 233, 233), rgb(246, 229, 229));
 }
 
 h1 {
-    color: #4f4b4b;
+    color: black;
     text-align: center;
 }
 
 table {
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
     border-collapse: collapse;
     margin: 0 auto 20px;
 }
 
 table th, table td {
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     padding: 10px;
     text-align: left;
 }
 
 table th {
-    background-color: #4CAF50;
+    background-color: #3f51b5;
     color: white;
 }
 
@@ -35,7 +35,7 @@ form {
     background-color: #fff;
 }
 
-form input[type="text"], form input[type="number"] {
+form input[type="text"] {
     margin-bottom: 10px;
     padding: 5px;
     width: 98%;
@@ -43,12 +43,12 @@ form input[type="text"], form input[type="number"] {
 
 form input[type="submit"] {
     padding: 5px 10px;
-    background-color: #4CAF50;
+    background-color: #3f51b5;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 form input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #3f51b5;
 }
