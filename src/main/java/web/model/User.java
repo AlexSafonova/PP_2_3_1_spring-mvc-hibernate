@@ -1,30 +1,19 @@
 package web.model;
-
 import javax.persistence.*;
-
-
 @Entity(name = "users")
 
-
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Long id;
-    @Column
     private String name;
-    @Column
     private String surname;
-
     public User(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
-
     public User() {
     }
-
     public Long getId() {
         return id;
     }

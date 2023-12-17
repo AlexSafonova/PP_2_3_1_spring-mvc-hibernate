@@ -9,13 +9,10 @@ import web.repository.UserRepository;
 import java.util.List;
 
 @Service
-
 public class UserServiceImpl implements UserService {
-
     private final UserRepository userRepository;
 
     @Autowired
-
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -28,7 +25,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional
-
     @Override
     public void updateUser(User user) {
         userRepository.updateUser(user);
@@ -36,7 +32,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional
-
     @Override
     public void deleteUser(Long id) {
         userRepository.deleteUser(id);
@@ -44,7 +39,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional(readOnly = true)
-
     @Override
     public List<User> getAllUsers() {
         return userRepository.getAllUsers();

@@ -23,16 +23,12 @@ import java.util.Properties;
 @ComponentScan(value = "java")
 @EnableTransactionManagement
 @PropertySource("classpath:db.properties")
-
-
 public class HibernateConfig {
     private final Environment environment;
     @Autowired
-
     public HibernateConfig(Environment environment) {
         this.environment = environment;
     }
-
     @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -42,7 +38,6 @@ public class HibernateConfig {
         dataSource.setPassword(environment.getProperty("db.password"));
         return dataSource;
     }
-
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em
@@ -58,7 +53,6 @@ public class HibernateConfig {
         em.setJpaProperties(properties);
         return em;
     }
-
     @Bean
     public PlatformTransactionManager transactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -66,7 +60,6 @@ public class HibernateConfig {
 
         return transactionManager;
     }
-
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();

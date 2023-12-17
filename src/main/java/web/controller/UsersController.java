@@ -11,15 +11,12 @@ import web.service.UserService;
 
 
 @Controller
-
 public class UsersController {
     private final UserService userService;
     @Autowired
-
     public UsersController(UserService userService) {
         this.userService = userService;
     }
-
     @GetMapping(value = "/")
     public String getUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
@@ -34,6 +31,9 @@ public class UsersController {
     @PostMapping(value = "/update")
     public String updateUser(@RequestParam Long id, @RequestParam String name, @RequestParam String surname) {
         User user = new User(name, surname);
+        if (userService.getAllUsers().stream().noneMatch(user1 -> user1.getId().equals(id))) {
+            return "redirect:/";
+        }
         user.setId(id);
         userService.updateUser(user);
         return "redirect:/";
